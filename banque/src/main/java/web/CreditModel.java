@@ -5,6 +5,19 @@ public class CreditModel {
   private double taux ;
   private int duree ;
   private double mensualite ;
+  
+  public CreditModel() {
+	  super();
+  }
+  
+  public CreditModel(double montant, double taux, int duree, double mensualite) {
+	
+	this.montant = montant;
+	this.taux = taux;
+	this.duree = duree;
+	this.mensualite = mensualite;
+}
+
   public double getMontant() {
 	return montant;
   }
