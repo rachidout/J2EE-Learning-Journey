@@ -25,7 +25,7 @@ public void init() throws ServletException {
 	double  taux = Double.parseDouble(req.getParameter("taux"));
 	int duree = Integer.parseInt(req.getParameter("duree"));
 	 CreditModel model = new CreditModel();
-	 model.setMensualite(duree);
+	 model.setDuree(duree);
 	 model.setMontant(montant);
 	 model.setTaux(taux);
 	 double resultat = metier.calculerM(montant, taux, duree);
