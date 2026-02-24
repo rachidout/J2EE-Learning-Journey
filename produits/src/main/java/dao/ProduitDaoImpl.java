@@ -35,7 +35,7 @@ public class ProduitDaoImpl implements IProduitDao{
 				produits.add(p);
 			}
 		}catch (SQLException e) { e.printStackTrace();}
-			return produitss;
+			return produits;
 	}
 
 	@Override
