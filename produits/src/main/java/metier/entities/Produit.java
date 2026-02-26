@@ -11,9 +11,8 @@ public class Produit implements Serializable{
 	   super();
    }
 
-   public Produit(Long id, String designation, double prix, int quantite) {
+   public Produit( String designation, double prix, int quantite) {
 	super();
-	this.id = id;
 	this.designation = designation;
 	this.prix = prix;
 	this.quantite = quantite;

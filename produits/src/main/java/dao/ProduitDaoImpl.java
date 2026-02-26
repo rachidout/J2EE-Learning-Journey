@@ -13,9 +13,25 @@ import metier.entities.Produit;
 public class ProduitDaoImpl implements IProduitDao{
 
 	@Override
-	public Produit save(Produit p) {
-		// TODO Auto-generated method stub
-		return null;
+	public Produit save(Produit p) {		
+		Connection connection = SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO PRODUITS(DESIGNATION,PRIX,QUANTITE) "
+					+ "VALUES(?,?,?)");
+ 			ps.setString(2, p.getDesignation());
+			ps.setDouble(3,p.getPrix());
+			ps.setInt(4,p.getQuantite());
+			ps.executeUpdate(); //insert delete update 
+			PreparedStatement ps2 = connection.prepareStatement("SELECT MAX(ID) AS MAX_ID FROM PRODUITS");
+			ResultSet rs = ps2.executeQuery();
+	   if(rs.next()) {			
+				p.setId(rs.getLong("MAX_ID"));
+			}
+		
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return p;
 	}
 
 	@Override
@@ -24,7 +40,7 @@ public class ProduitDaoImpl implements IProduitDao{
 		Connection connection = SingletonConnection.getConnection();
 		try {
 			PreparedStatement ps = connection.prepareStatement("SELECT * FROM PRODUITS WHERE DESIGNATION LIKE ?");
-			ps.setString(1, "%" + mc +"%"); //% disent n'importe qoui 
+			ps.setString(1,mc); //% disent n'importe qoui 
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				Produit p = new Produit();
@@ -40,8 +56,25 @@ public class ProduitDaoImpl implements IProduitDao{
 
 	@Override
 	public Produit getProduit(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	     Produit p = null;
+		Connection connection = SingletonConnection.getConnection();
+		try {
+		 PreparedStatement ps = connection.prepareStatement("SELECT * FROM PRODUITS WHERE ID = ?");
+	     ps.setLong(1, id);
+	     ResultSet rs = ps.executeQuery();
+	     if(rs.next()) {
+	    	 p = new Produit();
+	     p.setId(rs.getLong("ID"));
+	     p.setDesignation(rs.getString("DESIGNATION"));
+	     p.setPrix(rs.getDouble("PRIX"));
+	     p.setQuantite(rs.getInt("QUANTITE"));
+	        }
+	     ps.close();
+	     }
+		catch(SQLException e) {
+			e.printStackTrace();
+		} 
+	     return p;
 	}
 
 	@Override
