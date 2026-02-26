@@ -18,9 +18,9 @@ public class ProduitDaoImpl implements IProduitDao{
 		try {
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO PRODUITS(DESIGNATION,PRIX,QUANTITE) "
 					+ "VALUES(?,?,?)");
- 			ps.setString(2, p.getDesignation());
-			ps.setDouble(3,p.getPrix());
-			ps.setInt(4,p.getQuantite());
+			ps.setString(1, p.getDesignation());
+			ps.setDouble(2,p.getPrix());
+			ps.setInt(3,p.getQuantite());
 			ps.executeUpdate(); //insert delete update 
 			PreparedStatement ps2 = connection.prepareStatement("SELECT MAX(ID) AS MAX_ID FROM PRODUITS");
 			ResultSet rs = ps2.executeQuery();

@@ -6,8 +6,9 @@ public class SingletonConnection {
     private static Connection connection ;
     static {
     	try {
-    		Class.forName("com.mysql.jdbc.Driver");
-    		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB_CATAL","root","");
+    		Class.forName("com.mysql.cj.jdbc.Driver");
+    		connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee","root","");
+    		System.out.println("Connexion à la base de données réussie !");
     	}catch(Exception e) {
     		e.printStackTrace();
     	}
