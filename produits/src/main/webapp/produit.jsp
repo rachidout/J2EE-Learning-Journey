@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <jsp:useBean id="model" class="metier.ProduitModel" scope="request" />
+    <jsp:useBean id="model" class="web.ProduitModel" scope="request" />
 
     <div class="container mt-5">
         <h2 class="mb-4">Rechercher un produit</h2>

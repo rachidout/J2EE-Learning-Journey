@@ -7,6 +7,6 @@
   </servlet>
   <servlet-mapping>
   <servlet-name>cs</servlet-name>
-  <url-pattern>*.java</url-pattern>
+  <url-pattern>.java</url-pattern>
   </servlet-mapping>
 </web-app>

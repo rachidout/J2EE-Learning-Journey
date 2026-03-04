@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import metier.ICreditMetier;
 import metier.CreditMetierIMP;
-@WebServlet(name="cs" ,urlPatterns= {"/Controller","*.lafak"})
+@WebServlet(name="cs" ,urlPatterns= {"/Controller","*.do"})
 public class ControleurServlet extends HttpServlet {
 	private ICreditMetier metier;
 @Override
