@@ -14,7 +14,7 @@ if(model == null){
 </head>
 <body>
   <div>
-  <form method="post" action="calculerM.lafak">
+  <form method="post" action="calculerM.do">
    <label for="montant" > Montant </label>
    <input type="text"   id="montant" name="montant" value="<%=model.getMontant()%>" placeholder="en DH">
    <label for="taux"> Taux</label>
