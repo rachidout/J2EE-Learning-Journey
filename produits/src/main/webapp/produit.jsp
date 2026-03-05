@@ -24,7 +24,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Désignation</th>
+                    <th>Designation</th>
                     <th>Prix</th>
                     <th>Quantité</th>
                 </tr>
