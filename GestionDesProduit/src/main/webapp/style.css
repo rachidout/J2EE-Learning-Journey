@@ -1,0 +1,143 @@
+/* Variables de couleurs */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger-color: #dc2626;
+    --danger-hover: #b91c1c;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+}
+
+/* Reset de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+/* En-tête de navigation */
+.header {
+    background-color: var(--white);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur principal */
+h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+/* Style des tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--white);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Boutons et liens d'action */
+button, .btn, .btn-ajouter {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+button:hover, .btn-ajouter:hover {
+    background-color: var(--primary-hover);
+}
+
+a[href*="supprimer"], a[href*="vider"] {
+    background-color: var(--danger-color);
+}
+
+a[href*="supprimer"]:hover, a[href*="vider"]:hover {
+    background-color: var(--danger-hover);
+}
+
+/* Formulaire de connexion */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Messages système */
+.message {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 4px solid #166534;
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 4px solid #991b1b;
+}

@@ -3,17 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+<link rel="stylesheet" href="style.css">
 <meta charset='utf-8' >
 </head>
 <body>
   <div>
-  <form method="post" action="Login">
-   <label for="email" > Nom d'utilisateur</label>
-   <input type="text"   id="username" name="username" required>
+  <form method="post" action="login">
+   <label for="username" > Nom d'utilisateur</label>
+   <input type="text"   id="user" name="user" required>
    <label for="password"> Password</label>
    <input type="password"  name="password" id="password" required/>
    <button type="submit"> Se Connecter </button>
     </form>
+    <div class="error">
+ <script>
+ const urlParams = new URLSearchParams(window.location.search);
+ const error = urlParams.get('error');
+ if (error === '1') {
+ document.write("Identifiants incorrects");
+ } else if (error === '2') {
+ document.write("Veuillez remplir tous les champs");
+ }
+ </script>
+ </div>
+    
   </div> 
 </body>
 </html> 

@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet{
     	request.getRequestDispatcher("/login.html").forward(request, response);
     }
   }
+	  @Override
   protected void doPost(HttpServletRequest request , HttpServletResponse response) throws ServletException ,IOException {
 	  String username = request.getParameter("user");
 	  String password = request.getParameter("password");

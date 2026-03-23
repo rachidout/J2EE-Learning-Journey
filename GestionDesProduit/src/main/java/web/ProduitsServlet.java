@@ -8,9 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import entities.*;
 
-@WebServlet(name="cs" , urlPatterns="/produits")
+@WebServlet(urlPatterns="/produits")
 public class ProduitsServlet extends HttpServlet{
-    private List<Produit> catalogue;
+   	private List<Produit> catalogue;
     
     public void init() throws ServletException{
         catalogue = new ArrayList<>();
@@ -33,17 +33,7 @@ public class ProduitsServlet extends HttpServlet{
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Catalogue de produits</title>");
-            out.println("<style>");
-            out.println("body { font-family: Arial, sans-serif; margin: 20px; }");
-            out.println("table { border-collapse: collapse; width: 100%; }");
-            out.println("th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }");
-            out.println("th { background-color: #4CAF50; color: white; }");
-            out.println("tr:nth-child(even) { background-color: #f2f2f2; }");
-            out.println(".btn-ajouter { background-color: #4CAF50; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; }");
-            out.println(".btn-ajouter:hover { background-color: #45a049; }");
-            out.println(".header { background-color: #333; color: white; padding: 10px; margin-bottom: 20px; }");
-            out.println(".header a { color: white; margin-left: 20px; }");
-            out.println("</style>");
+            out.println("<link rel='stylesheet' href='style.css'>");
             out.println("</head>");
             out.println("<body>");
             out.println("<div class='header'>");
