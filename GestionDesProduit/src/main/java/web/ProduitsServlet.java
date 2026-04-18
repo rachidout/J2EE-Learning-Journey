@@ -26,42 +26,9 @@ public class ProduitsServlet extends HttpServlet{
             response.sendRedirect("login.html");
         } else {
             String username = (String)session.getAttribute("user");
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Catalogue de produits</title>");
-            out.println("<link rel='stylesheet' href='style.css'>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<div class='header'>");
-            out.println("<span>Bienvenue, <strong>" + username + "</strong></span>");
-            out.println("<a href='panier'>Voir mon panier</a>");
-            out.println("<a href='deconnexion'>Déconnexion</a>");
-            out.println("</div>");
-            out.println("<h2>Catalogue de produits</h2>");
-            out.println("<table>");
-            out.println("<tr>");
-            out.println("<th>ID</th>");
-            out.println("<th>Nom du produit</th>");
-            out.println("<th>Prix</th>");
-            out.println("<th>Action</th>");
-            out.println("</tr>");
-
-            for (Produit p : catalogue) {
-                out.println("<tr>");
-                out.println("<td>" + p.getId() + "</td>");
-                out.println("<td>" + p.getNom() + "</td>");
-                out.println("<td>" + String.format("%.2f", p.getPrix()) + " DH</td>");
-                out.println("<td><a class='btn-ajouter' href='panier?action=ajouter&id=" + p.getId() + "'>Ajouter au panier</a></td>");
-                out.println("</tr>");
-            }
-
-            out.println("</table>");
-            out.println("</body>");
-            out.println("</html>");
+            request.setAttribute("username", username);
+            request.setAttribute("catalogue", catalogue);
+            request.getRequestDispatcher("produits.jsp").forward(request, response);
         }
     }
 }

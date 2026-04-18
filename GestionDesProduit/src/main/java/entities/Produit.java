@@ -1,7 +1,7 @@
 package entities;
 import java.io.Serializable;
 
-public class Produit {
+public class Produit  {
    private int id ;
    private String nom ;
    private double prix;
